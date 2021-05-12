@@ -9,8 +9,8 @@
 使用`--help`命令输出帮助信息
 
 ```
-python git_search.py --help
-Usage: git_search.py [OPTIONS]
+python github_search.py --help
+Usage: github_search.py [OPTIONS]
 
 Options:
   -p, --page TEXT  Number of messages
@@ -34,3 +34,27 @@ python git_search.py -p 5 -k A -k B
 ```
 
 搜索结束，所有的信息将会输出在**终端**上，并存入该**key**命名的**csv**文件，仅保存从未搜索过的结果。
+
+## 更新
+
+因为在使用中发现自己并不是每次都想保存到**csv**中，有时仅仅想搜索🔍而已。所以增添一个保存选项。
+
+同样通过`--help`命令输出帮助信息
+
+```
+>python github_search.py --help
+Usage: github_search.py [OPTIONS]
+
+Options:
+  -p, --page TEXT              Number of messages
+  -k, --keys TEXT              Key for message  [required]
+  -s, --save / -ns, --no-save  Save scv
+  --help                       Show this message and exit.
+```
+
+新选项`save/no-save`非常的简单，默认是`no-save` 。如果需要保存至该**key**命名的**csv**文件中，在最后输入`-s`选项即可。
+
+```
+python github_search.py -p 3 -k A -k B -s
+```
+
